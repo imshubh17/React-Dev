@@ -8,8 +8,12 @@ const app = express();
 app.use(bodyParser.json());
 
 //read file
-const rawData = fs.readFileSync('data.json');
-console.log(typeof rawData)
+const rawData;
+fs.readFile('data.json', (err, data) => {
+    if (err) throw err;
+    rawData = JSON.parse(data);    
+});
+
 //Routing
 app.get('/',(req, res) => res.status(200).send("Server page !!"));
 app.get('/api',(req, res) => res.status(200).send(JSON.parse(rawData)));  
