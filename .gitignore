@@ -11,6 +11,10 @@
 /py-flask-server/env
 /py-flask-server/__pycache__/
 /py-flask-server/application/__pycache__/
+
+#nodejs server dependencies
+/nodejs-server/node_modules
+
 # testing
 /coverage
 
