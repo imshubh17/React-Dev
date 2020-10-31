@@ -1,0 +1,18 @@
+// import modules
+import express  from 'express';
+import bodyParser, { json } from 'body-parser';
+import fs from 'fs';
+
+//create server app
+const app = express();
+app.use(bodyParser.json());
+
+//read file
+const rawData = fs.readFileSync('data.json');
+console.log(typeof rawData)
+//Routing
+app.get('/',(req, res) => res.status(200).send("Server page !!"));
+app.get('/api',(req, res) => res.status(200).send(JSON.parse(rawData)));  
+
+//server listening
+app.listen(8000, ()=>console.log('server listnning at localhost:8000'));
