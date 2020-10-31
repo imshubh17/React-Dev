@@ -1,5 +1,5 @@
 # Import Modules
-from flask import Flask
+from flask import Flask, jsonify
 import json 
 
 # create app
@@ -11,10 +11,10 @@ with open('data.json') as f:
 
 # Routing
 @app.route("/")
-@app.route("/Home")
+@app.route("/home")
 def index():
     return "Server Page!!"
 
 @app.route("/api")
 def api():
-    return json.dumps(data)
+    return jsonify(data)
