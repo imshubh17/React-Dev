@@ -8,6 +8,9 @@
 #python server dependencies
 /py-flask-server/Pipfile
 /py-flask-server/Pipfile.lock
+/py-flask-server/env
+/py-flask-server/__pycache__/
+/py-flask-server/application/__pycache__/
 # testing
 /coverage
 
