@@ -1,10 +1,13 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+/react-client/node_modules
 /.pnp
 .pnp.js
 
+#python server dependencies
+/py-flask-server/Pipfile
+/py-flask-server/Pipfile.lock
 # testing
 /coverage
 
