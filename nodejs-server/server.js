@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 
 //read file
-const rawData;
+var rawData = {}
 fs.readFile('data.json', (err, data) => {
     if (err) throw err;
     rawData = JSON.parse(data);    
@@ -16,7 +16,7 @@ fs.readFile('data.json', (err, data) => {
 
 //Routing
 app.get('/',(req, res) => res.status(200).send("Server page !!"));
-app.get('/api',(req, res) => res.status(200).send(JSON.parse(rawData)));  
+app.get('/api',(req, res) => res.status(200).send(JSON.stringify(rawData)));  
 
 //server listening
 app.listen(8000, ()=>console.log('server listnning at localhost:8000'));
