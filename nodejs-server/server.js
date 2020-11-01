@@ -2,7 +2,7 @@
 import express  from 'express';
 import bodyParser, { json } from 'body-parser';
 import fs from 'fs';
-
+import withDB from './mongoDB'
 //create server app
 const app = express();
 app.use(bodyParser.json());
@@ -24,15 +24,13 @@ app.post('/api/user/signup',(req,res)=>{
         const {FirstName, LastName, email, password} = req.body;
         const userData = {FirstName, LastName, email, password};
         //const userInfo = await db.collection('Users').findOne({ email: email })
-        await db.collection('Users').insertOne(userData, async (err, res)=>{
-            if (err){
-                res.status(401).json({message:"Registration failed", error: err});
-            }
-            else{
-                const registerdUser = await db.collection('Users').findOne({ email: email });
-                res.status(200).json(updatedArticleInfo); 
-            }
-        });      
+        await db.collection('Users').insertOne(userData, (err, res)=>{
+            if (err) throw err;   
+            console.log('signup success!!!');
+        });
+        const registerdUser = await db.collection('Users').findOne({ email: email });
+        res.status(200).json(registerdUser);
+
     }, 'ReactDev', res);       
 });
 
