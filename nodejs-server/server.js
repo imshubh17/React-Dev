@@ -7,11 +7,11 @@ import dotenv from "dotenv";
 dotenv.config();
 
 //connect db
-mongoose.connect(process.env.DB_CONNECT,{ useNewUrlParser: true }, ()=> console.log('connected to db'));
+mongoose.connect(process.env.DB_CONNECT,{useNewUrlParser: true, useUnifiedTopology: true}, ()=> console.log('connected to db'));
 
 //create server app
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 
 //import routes
 import authRoute from "./routes/auth";

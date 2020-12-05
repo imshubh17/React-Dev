@@ -14,6 +14,7 @@
 
 #nodejs server dependencies
 /nodejs-server/node_modules
+/nodejs-server/.env
 
 # testing
 /coverage
