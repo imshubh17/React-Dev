@@ -3,6 +3,7 @@ import express  from 'express';
 import bodyParser, { json } from 'body-parser';
 import mongoose, { connect } from "mongoose";
 import dotenv from "dotenv";
+import varifyToken from "./routes/varifyToken";
 
 dotenv.config();
 
@@ -21,7 +22,7 @@ app.use('/api/user',authRoute);
 
 //Routing
 
-app.get('/',(req, res) => res.status(200).send("Server page !!"));
+app.get('/', varifyToken,(req, res) => res.status(200).send("Server page !!"));
 
 //server listening
 app.listen(8000, ()=>console.log('server listnning at localhost:8000'));
