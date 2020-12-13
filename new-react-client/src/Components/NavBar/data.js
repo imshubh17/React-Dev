@@ -3,7 +3,7 @@ import { FaSignInAlt, FaSignOutAlt, FaFacebook, FaLinkedin, FaTwitter } from 're
 import { AiFillHome } from 'react-icons/ai';
 import { SiGnuprivacyguard} from 'react-icons/si';
 import { RiContactsFill } from 'react-icons/ri';
-import { GrInfo } from 'react-icons/gr';
+import { CgDetailsMore } from 'react-icons/cg';
 
 
 
@@ -18,7 +18,7 @@ export const links = [
     id: 2,
     url: '/about',
     text: 'about',
-    icon: <GrInfo/>,
+    icon: <CgDetailsMore/>,
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ export const authLinks = [
     id: 2,
     url: '/about',
     text: 'about',
-    icon: <GrInfo/>,
+    icon: <CgDetailsMore/>,
   },
   {
     id: 3,
