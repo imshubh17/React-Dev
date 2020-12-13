@@ -33,17 +33,38 @@ export const links = [
     icon:<FaSignInAlt/>,
   },
   {
-    id: 4,
-    url: '/logout',
-    text: 'Logout',
-    icon:<FaSignOutAlt/>,
-  },
-  {
     id: 5,
     url: '/sign-up',
     text: 'Signup',
     icon: <SiGnuprivacyguard/>,
   },
+];
+
+export const authLinks = [
+  {
+    id: 1,
+    url: '/',
+    text: 'home',
+    icon: <AiFillHome/>,
+  },
+  {
+    id: 2,
+    url: '/about',
+    text: 'about',
+    icon: <GrInfo/>,
+  },
+  {
+    id: 3,
+    url: '/contact',
+    text: 'contact',
+    icon: <RiContactsFill/>
+  },
+  {
+    id: 4,
+    url: '/logout',
+    text: 'Logout',
+    icon:<FaSignOutAlt/>,
+  },  
 ];
 
 export const social = [

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
-import { links, social } from './data';
+import { links, authLinks } from './data';
 import app from './app.svg';
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -17,6 +17,8 @@ const Navbar = () => {
       linksContainerRef.current.style.height = '0px';
     }
   }, [showLinks]);
+  console.log('navbar');
+  const mainLinks =  localStorage.getItem("auth") ? authLinks : links
   return (
     <nav>
       <div className='nav-center'>
@@ -29,8 +31,8 @@ const Navbar = () => {
         </div>
         <div className='links-container' ref={linksContainerRef}>
           <ul className='links' ref={linksRef}>
-            {links.map((link) => {
-              const { id, url, text, icon} = link;
+            {mainLinks.map((link) => {
+              const { id, url, text, icon} = link;                             
               return (
                 <li key={id}>
                   <a href={url}>{icon} {text}</a>
@@ -55,4 +57,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default React.memo(Navbar);
