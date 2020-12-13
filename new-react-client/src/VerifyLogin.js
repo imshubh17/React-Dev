@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default function VerifyLogin(User) {   
+function VerifyLogin(User) {   
     console.log(JSON.stringify(User))
  
     axios.post('api/user/login', User)   
@@ -24,3 +24,28 @@ export default function VerifyLogin(User) {
     return false;  
    
 }
+
+function VerifySignup(User) {   
+    console.log(JSON.stringify(User))
+ 
+    axios.post('api/user/register', User)   
+    .then((res)=>{
+        const data = res.data;
+        if(data.status){         
+            console.log('singup success');
+            window.location.href = '/login'; 
+            alert('Registed, Please Login!');
+            return true;
+        }
+        else{            
+            console.log('singup failed');
+            return false;
+        }
+        
+    })
+    .catch(e=>console.log('login access failed',e));
+    return false;  
+   
+}
+
+export {VerifyLogin, VerifySignup};
