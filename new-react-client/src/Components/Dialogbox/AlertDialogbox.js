@@ -6,30 +6,27 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
-export default function AlertDialog() {
-  const [open, setOpen] = React.useState(false);
+export default function AlertDialog({alertTitle, alertMessage}) {
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  const [open, setOpen] = React.useState(false);
+  const [Msg, SetMsg] = useState("this is sample alert message");
+  const [Title, SetTitle] = useState("this is sample Title");
+
+  //set values
+  setOpen(true);
+  SetTitle(alertTitle);
+  SetMsg(alertMessage);
 
   const handleClose = () => {
     setOpen(false);
   };
-
-  const [Msg, SetMsg] = useState("this is sample alert message");
-  const [Title, SetTitle] = useState("this is sample Title");
-  return (
-    <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open alert dialog
-      </Button>
+  
+  return (  
       <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
+        aria-describedby="alert-dialog-description">
         <DialogTitle id="alert-dialog-title">{Title}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
@@ -41,7 +38,6 @@ export default function AlertDialog() {
             Ok
           </Button>
         </DialogActions>
-      </Dialog>
-    </div>
+      </Dialog>    
   );
 }
