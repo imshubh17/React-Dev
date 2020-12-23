@@ -23,6 +23,6 @@ app.use('/api/user',authRoute);
 //Routing
 
 app.get('/', varifyToken,(req, res) => res.status(200).send("Server page !!"));
-
+app.get('/api',(req, res) => res.status(200).send({msg:"api page !!"}));
 //server listening
-app.listen(8000, ()=>console.log('server listnning at localhost:8000'));
+app.listen(5000, ()=>console.log('server listnning at localhost:5000'));

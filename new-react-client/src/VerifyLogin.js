@@ -15,7 +15,7 @@ function VerifyLogin(User) {
         }
         else{
             localStorage.setItem("auth", data.status)
-            console.log('login failed');
+            console.log('login failed',data);
             return false;
         }
         
@@ -38,12 +38,12 @@ function VerifySignup(User) {
             return true;
         }
         else{            
-            console.log('singup failed');
+            console.log('singup failed',data);
             return false;
         }
         
     })
-    .catch(e=>console.log('login access failed',e));
+    .catch(e=>console.log('registration failed',e));
     return false;  
    
 }

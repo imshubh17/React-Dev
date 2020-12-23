@@ -1,42 +1,34 @@
 import React from 'react';
-import { FaSignInAlt, FaSignOutAlt, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { AiFillHome } from 'react-icons/ai';
-import { SiGnuprivacyguard} from 'react-icons/si';
-import { RiContactsFill } from 'react-icons/ri';
-import { CgDetailsMore, CgProfile } from 'react-icons/cg';
-
-
+import HomeIcon from '@material-ui/icons/Home';
+import DetailsIcon from '@material-ui/icons/Details';
+import ContactsIcon from '@material-ui/icons/Contacts';
+import LockOpenTwoToneIcon from '@material-ui/icons/LockOpenTwoTone';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 export const links = [
   {
     id: 1,
     url: '/',
-    text: 'home',
-    icon: <AiFillHome/>,
+    text: 'Home',
+    icon: <HomeIcon/>,
   },
   {
     id: 2,
     url: '/about',
-    text: 'about',
-    icon: <CgDetailsMore/>,
+    text: 'About',
+    icon: <DetailsIcon/>,
   },
   {
     id: 3,
     url: '/contact',
-    text: 'contact',
-    icon: <RiContactsFill/>
+    text: 'Contact',
+    icon: <ContactsIcon/>
   },
   {
     id: 4,
-    url: '/login',
-    text: 'Login',
-    icon:<FaSignInAlt/>,
-  },
-  {
-    id: 5,
     url: '/sign-up',
     text: 'Signup',
-    icon: <SiGnuprivacyguard/>,
+    icon: <LockOpenTwoToneIcon/>,
   },
 ];
 
@@ -44,49 +36,26 @@ export const authLinks = [
   {
     id: 1,
     url: '/',
-    text: 'home',
-    icon: <AiFillHome/>,
+    text: 'Home',
+    icon: <HomeIcon/>,
   },
   {
     id: 2,
     url: '/about',
-    text: 'about',
-    icon: <CgDetailsMore/>,
+    text: 'About',
+    icon: <DetailsIcon/>,
   },
   {
     id: 3,
     url: '/contact',
-    text: 'contact',
-    icon: <RiContactsFill/>
+    text: 'Contact',
+    icon: <ContactsIcon/>
   },
   {
     id: 4,
     url: '/user',
     text: 'Profile',
-    icon:<CgProfile/>,
-  },  
-  {
-    id: 5,
-    url: '/logout',
-    text: 'Logout',
-    icon:<FaSignOutAlt/>,
-  },  
+    icon:<AccountBoxIcon/>,
+  },    
 ];
 
-export const social = [
-  {
-    id: 1,
-    url: 'https://www.twitter.com',
-    icon: <FaFacebook />,
-  },
-  {
-    id: 2,
-    url: 'https://www.twitter.com',
-    icon: <FaTwitter />,
-  },
-  {
-    id: 3,
-    url: 'https://www.twitter.com',
-    icon: <FaLinkedin />,
-  },  
-];

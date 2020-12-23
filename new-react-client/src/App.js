@@ -34,9 +34,9 @@ function App() {
     <AuthContext.Provider
       value={{ authState: auth, authDispatch: dispatch }}
     >
-    <div className="App">
-      <Navbar />  
+    <div className="App">      
       <Router>
+        <Navbar />  
         <Routes/>
       </Router>    
     </div>
