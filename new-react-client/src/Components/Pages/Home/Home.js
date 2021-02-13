@@ -1,38 +1,22 @@
-import {React, useState, useEffect} from 'react'
-import axios from "axios";
+import React from 'react'
 import CourseList from "../../Courses/CourseList";
 import Grid from '@material-ui/core/Grid';
-
+import MainHeader from './MainHeader';
 export default function Home() {
-    const [data, setData]= useState([]);
-    useEffect(() => {
-        const fetchData = () => {
-           axios.get(`/api`).then(result=>{
-            const body = result.data
-            setData(body.msg);
-           })          
-            
-        };
-        fetchData();
-    }, []);//empty for effect when load and then name changes
     
     return (
-        <>
-        <p>Welcome to home page --- {data}!!!</p>
+        <>        
+        <MainHeader/>
         <Grid
-  container
-  spacing={0}
-  direction="column"
-  alignItems="center"
-  justify="center"
-  style={{ minHeight: '100vh' }}
->
-
-  <Grid item xs={3}>
-  <CourseList/>
-  </Grid>   
-
-</Grid> 
+          container
+          spacing={0}
+          direction="column"
+          alignItems="center"
+          justify="center"
+          style={{ minHeight: '100vh' }}
+        > 
+          <CourseList/>
+        </Grid> 
         
         </>
     )

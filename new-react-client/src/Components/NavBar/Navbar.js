@@ -24,6 +24,7 @@ import LoginDialog from "../Dialogbox/LoginDialogbox";
 import LogoutButton from '../Authentication/Logout';
 import ComputerTwoToneIcon from '@material-ui/icons/ComputerTwoTone';
 
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1
@@ -250,6 +251,7 @@ export default function PrimarySearchAppBar() {
             
           </div>
           <div className={classes.sectionMobile}>
+          {isAuth ? 
             <IconButton
               aria-label="show more"
               aria-controls={mobileMenuId}
@@ -259,6 +261,7 @@ export default function PrimarySearchAppBar() {
             >
               <MoreIcon />
             </IconButton>
+            : <LoginDialog/>}
           </div>
         </Toolbar>
       </AppBar>
