@@ -1,0 +1,45 @@
+.header {
+    background-color: rgb(30, 28, 31);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    align-items:center;
+    
+}
+
+
+
+.header_nav {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+
+.header_link {
+    color: rgb(28, 130, 219);
+    text-decoration: none;
+}
+
+.header_option {
+    display: flex;
+    flex-direction:column;
+    margin-left: 30px;
+    margin-right: 10px;
+    
+}
+
+.header_optionLineOne {
+    font-size: 10px;
+}
+
+.header_optionLineTwo {
+    font-size: 13px;
+    font-weight: 800;
+}
+
